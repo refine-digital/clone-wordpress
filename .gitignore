@@ -1,0 +1,45 @@
+# Log files
+*.log
+clone-*.log
+
+# Database dumps
+*.sql
+*.sql.gz
+
+# Docker images
+*.tar
+
+# Environment files
+.env
+.env.*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# System files
+Thumbs.db
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Editor directories
+.vscode/
+.idea/
+*.sublime-*
+
+# WordPress sites (these are cloned, not committed)
+local-*/
+
+# Testing
+test/
+*.test
