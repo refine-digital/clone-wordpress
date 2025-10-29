@@ -4,7 +4,7 @@ Infrastructure-aware WordPress site cloner for seamless local development. Clone
 
 ## Overview
 
-`clone-wordpress.sh` is designed to work with the [clone-infrastructure](https://github.com/yourusername/clone-infrastructure) project to provide a complete local development workflow for WordPress sites.
+`clone-wordpress.sh` is designed to work with the [clone-infrastructure](https://github.com/refine-digital/clone-infrastructure) project to provide a complete local development workflow for WordPress sites.
 
 ## Features
 
@@ -21,7 +21,7 @@ Infrastructure-aware WordPress site cloner for seamless local development. Clone
 
 - macOS or Linux
 - Docker and Docker Compose installed
-- [clone-infrastructure](https://github.com/yourusername/clone-infrastructure) set up
+- [clone-infrastructure](https://github.com/refine-digital/clone-infrastructure) set up
 - SSH access to production server (configured by clone-infrastructure)
 - `rsync` installed
 - WordPress CLI (wp-cli) in Docker containers
@@ -31,14 +31,14 @@ Infrastructure-aware WordPress site cloner for seamless local development. Clone
 1. Set up infrastructure first:
 ```bash
 # Clone and set up infrastructure project
-git clone https://github.com/yourusername/clone-infrastructure.git
+git clone https://github.com/refine-digital/clone-infrastructure.git
 cd clone-infrastructure
 ./clone-infrastructure.sh dev-fi-01 46.62.207.172
 ```
 
 2. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/clone-wordpress.git
+git clone https://github.com/refine-digital/clone-wordpress.git
 cd clone-wordpress
 ```
 
@@ -516,7 +516,7 @@ You can clone multiple WordPress sites using the same infrastructure:
 
 ## Integration with clone-infrastructure
 
-This project requires [clone-infrastructure](https://github.com/yourusername/clone-infrastructure) to be set up first.
+This project requires [clone-infrastructure](https://github.com/refine-digital/clone-infrastructure) to be set up first.
 
 **Complete Setup:**
 1. Install clone-infrastructure
@@ -555,8 +555,8 @@ Contributions welcome! Please open an issue or pull request.
 ## Support
 
 For issues and questions:
-- GitHub Issues: https://github.com/yourusername/clone-wordpress/issues
-- Documentation: https://github.com/yourusername/clone-wordpress
+- GitHub Issues: https://github.com/refine-digital/clone-wordpress/issues
+- Documentation: https://github.com/refine-digital/clone-wordpress
 
 ## Author
 
@@ -564,4 +564,4 @@ Created for infrastructure-centric local WordPress development workflows.
 
 ## Related Projects
 
-- [clone-infrastructure](https://github.com/yourusername/clone-infrastructure) - Infrastructure management toolkit (required)
+- [clone-infrastructure](https://github.com/refine-digital/clone-infrastructure) - Infrastructure management toolkit (required)
