@@ -28,23 +28,57 @@ Infrastructure-aware WordPress site cloner for seamless local development. Clone
 
 ## Installation
 
-1. Set up infrastructure first:
+### Quick Install (Recommended)
+
+**1. Install infrastructure tools first:**
 ```bash
-# Clone and set up infrastructure project
 git clone https://github.com/refine-digital/clone-infrastructure.git
 cd clone-infrastructure
-./clone-infrastructure.sh dev-fi-01 46.62.207.172
+./install.sh
+
+# Configure PATH if prompted
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+
+# Clone your infrastructure
+clone-infrastructure dev-fi-01 46.62.207.172
 ```
 
-2. Clone this repository:
+**2. Install WordPress cloner:**
 ```bash
 git clone https://github.com/refine-digital/clone-wordpress.git
 cd clone-wordpress
+./install.sh
 ```
 
-3. Make script executable:
+After installation, the `clone-wordpress` command is available globally.
+
+### Manual Installation (Alternative)
+
+If you prefer to run the script from the project directory:
+
 ```bash
+# 1. Set up infrastructure first
+git clone https://github.com/refine-digital/clone-infrastructure.git
+cd clone-infrastructure
+./install.sh
+
+# 2. Clone WordPress project
+git clone https://github.com/refine-digital/clone-wordpress.git
+cd clone-wordpress
 chmod +x clone-wordpress.sh
+```
+
+Then run with `./clone-wordpress.sh` instead of `clone-wordpress`.
+
+### Updating
+
+To update to the latest version:
+
+```bash
+cd clone-wordpress
+git pull
+./install.sh  # Re-run installer to update command
 ```
 
 ## Usage
@@ -54,7 +88,7 @@ chmod +x clone-wordpress.sh
 Clone a WordPress site from production to local:
 
 ```bash
-./clone-wordpress.sh <infrastructure> <domain> [folder] [--clean]
+clone-wordpress <infrastructure> <domain> [folder] [--clean]
 ```
 
 ### Parameters
@@ -68,31 +102,31 @@ Clone a WordPress site from production to local:
 
 **Clone to default location:**
 ```bash
-./clone-wordpress.sh dev-fi-01 example.com
+clone-wordpress dev-fi-01 example.com
 # Creates: ~/ProjectFiles/wordpress/local-example-com/
 ```
 
 **Clone to current directory:**
 ```bash
-./clone-wordpress.sh dev-fi-01 example.com .
+clone-wordpress dev-fi-01 example.com .
 # Creates: ./local-example-com/
 ```
 
 **Clone to specific directory:**
 ```bash
-./clone-wordpress.sh dev-fi-01 example.com ~/sites
+clone-wordpress dev-fi-01 example.com ~/sites
 # Creates: ~/sites/local-example-com/
 ```
 
 **Clean re-clone:**
 ```bash
-./clone-wordpress.sh dev-fi-01 example.com --clean
+clone-wordpress dev-fi-01 example.com --clean
 # Removes existing site and clones fresh
 ```
 
 **Clean re-clone to current directory:**
 ```bash
-./clone-wordpress.sh dev-fi-01 example.com . --clean
+clone-wordpress dev-fi-01 example.com . --clean
 ```
 
 ## What It Does
@@ -354,13 +388,13 @@ The script is idempotent - safe to run multiple times:
 **Example workflow:**
 ```bash
 # Initial clone
-./clone-wordpress.sh dev-fi-01 example.com
+clone-wordpress dev-fi-01 example.com
 
 # Update from production (keeps local changes to configs)
-./clone-wordpress.sh dev-fi-01 example.com
+clone-wordpress dev-fi-01 example.com
 
 # Fresh start (removes everything)
-./clone-wordpress.sh dev-fi-01 example.com --clean
+clone-wordpress dev-fi-01 example.com --clean
 ```
 
 ## Troubleshooting
@@ -467,12 +501,10 @@ Complete workflow for local WordPress development:
 
 ```bash
 # 1. Set up infrastructure (one time)
-cd /path/to/clone-infrastructure
-./clone-infrastructure.sh dev-fi-01 46.62.207.172
+clone-infrastructure dev-fi-01 46.62.207.172
 
 # 2. Clone WordPress site
-cd /path/to/clone-wordpress
-./clone-wordpress.sh dev-fi-01 example.com
+clone-wordpress dev-fi-01 example.com
 
 # 3. Add to hosts file
 echo "127.0.0.1 local-example.com" | sudo tee -a /etc/hosts
@@ -483,10 +515,10 @@ open http://local-example.com
 # 5. Make local changes, test...
 
 # 6. Update from production (get latest data)
-./clone-wordpress.sh dev-fi-01 example.com
+clone-wordpress dev-fi-01 example.com
 
 # 7. Fresh start when needed
-./clone-wordpress.sh dev-fi-01 example.com --clean
+clone-wordpress dev-fi-01 example.com --clean
 ```
 
 ## Multiple Sites
@@ -495,13 +527,13 @@ You can clone multiple WordPress sites using the same infrastructure:
 
 ```bash
 # Clone site 1
-./clone-wordpress.sh dev-fi-01 site1.com
+clone-wordpress dev-fi-01 site1.com
 
 # Clone site 2
-./clone-wordpress.sh dev-fi-01 site2.com
+clone-wordpress dev-fi-01 site2.com
 
 # Clone site 3
-./clone-wordpress.sh dev-fi-01 site3.com
+clone-wordpress dev-fi-01 site3.com
 
 # All sites share:
 # - nginx-proxy
