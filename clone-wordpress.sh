@@ -116,6 +116,16 @@ echo ""
 ################################################################################
 echo -e "${YELLOW}Verifying infrastructure...${NC}"
 
+# Check if Docker is running
+if ! docker info >/dev/null 2>&1; then
+    echo -e "${RED}Error: Docker is not running${NC}"
+    echo ""
+    echo "Please start Docker Desktop and try again."
+    echo ""
+    exit 1
+fi
+echo "  ✓ Docker is running"
+
 # Check if infrastructure directory exists
 if [ ! -d "${INFRA_DIR}" ]; then
     echo -e "${RED}Error: Infrastructure '${INFRASTRUCTURE}' not found at ${INFRA_DIR}${NC}"
