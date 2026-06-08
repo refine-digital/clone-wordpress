@@ -4,7 +4,7 @@ Infrastructure-aware WordPress site cloner for seamless local development. Clone
 
 ## Overview
 
-`clone-wordpress.sh` is designed to work with the [clone-infrastructure](https://github.com/refine-digital/clone-infrastructure) project to provide a complete local development workflow for WordPress sites.
+`clone-wordpress.sh` is designed to work with the [clone-infrastructure](https://github.com/refinedigital/clone-infrastructure) project to provide a complete local development workflow for WordPress sites.
 
 ## Features
 
@@ -21,7 +21,7 @@ Infrastructure-aware WordPress site cloner for seamless local development. Clone
 
 - macOS or Linux
 - Docker and Docker Compose installed
-- [clone-infrastructure](https://github.com/refine-digital/clone-infrastructure) set up
+- [clone-infrastructure](https://github.com/refinedigital/clone-infrastructure) set up
 - SSH access to production server (configured by clone-infrastructure)
 - `rsync` installed
 - WordPress CLI (wp-cli) in Docker containers
@@ -32,7 +32,7 @@ Infrastructure-aware WordPress site cloner for seamless local development. Clone
 
 **1. Install infrastructure tools first:**
 ```bash
-git clone https://github.com/refine-digital/clone-infrastructure.git
+git clone https://github.com/refinedigital/clone-infrastructure.git
 cd clone-infrastructure
 ./install.sh
 
@@ -46,7 +46,7 @@ clone-infrastructure dev-fi-01 46.62.207.172
 
 **2. Install WordPress cloner:**
 ```bash
-git clone https://github.com/refine-digital/clone-wordpress.git
+git clone https://github.com/refinedigital/clone-wordpress.git
 cd clone-wordpress
 ./install.sh
 ```
@@ -59,12 +59,12 @@ If you prefer to run the script from the project directory:
 
 ```bash
 # 1. Set up infrastructure first
-git clone https://github.com/refine-digital/clone-infrastructure.git
+git clone https://github.com/refinedigital/clone-infrastructure.git
 cd clone-infrastructure
 ./install.sh
 
 # 2. Clone WordPress project
-git clone https://github.com/refine-digital/clone-wordpress.git
+git clone https://github.com/refinedigital/clone-wordpress.git
 cd clone-wordpress
 chmod +x clone-wordpress.sh
 ```
@@ -548,7 +548,7 @@ clone-wordpress dev-fi-01 site3.com
 
 ## Integration with clone-infrastructure
 
-This project requires [clone-infrastructure](https://github.com/refine-digital/clone-infrastructure) to be set up first.
+This project requires [clone-infrastructure](https://github.com/refinedigital/clone-infrastructure) to be set up first.
 
 **Complete Setup:**
 1. Install clone-infrastructure
@@ -587,8 +587,8 @@ Contributions welcome! Please open an issue or pull request.
 ## Support
 
 For issues and questions:
-- GitHub Issues: https://github.com/refine-digital/clone-wordpress/issues
-- Documentation: https://github.com/refine-digital/clone-wordpress
+- GitHub Issues: https://github.com/refinedigital/clone-wordpress/issues
+- Documentation: https://github.com/refinedigital/clone-wordpress
 
 ## Author
 
@@ -596,4 +596,4 @@ Created for infrastructure-centric local WordPress development workflows.
 
 ## Related Projects
 
-- [clone-infrastructure](https://github.com/refine-digital/clone-infrastructure) - Infrastructure management toolkit (required)
+- [clone-infrastructure](https://github.com/refinedigital/clone-infrastructure) - Infrastructure management toolkit (required)

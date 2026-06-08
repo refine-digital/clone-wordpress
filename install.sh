@@ -70,7 +70,7 @@ if ! command -v clone-infrastructure &> /dev/null; then
     echo "clone-wordpress requires clone-infrastructure to be installed first."
     echo "Please install clone-infrastructure before installing clone-wordpress:"
     echo ""
-    echo "  git clone https://github.com/refine-digital/clone-infrastructure.git"
+    echo "  git clone https://github.com/refinedigital/clone-infrastructure.git"
     echo "  cd clone-infrastructure"
     echo "  ./install.sh"
     echo ""
@@ -136,7 +136,7 @@ echo "  clone-wordpress dev-fi-01 example.com . --clean"
 echo "  clone-wordpress dev-fi-01 example.com ~/sites"
 echo ""
 echo "For more information:"
-echo "  https://github.com/refine-digital/clone-wordpress"
+echo "  https://github.com/refinedigital/clone-wordpress"
 echo ""
 
 # Check if PATH was modified
